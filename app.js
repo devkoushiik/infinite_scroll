@@ -8,7 +8,7 @@ let photoArray = [];
 
 // unsplash api
 
-const count = 30;
+const count = 500;
 const apiKey = "v0-1LpKFyJqLVlcfz7JxcHGrKYFFEZ3nGM3Tae_C9Qk";
 const urlApi = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
@@ -39,8 +39,6 @@ function displayPhotos() {
   photoArray.forEach((photo) => {
     // create <a> t link to Unsplash
     const item = document.createElement("a");
-    // item.setAttribute("href", photo.links.html);
-    // item.setAttribute("target", "_blank");
     setAttribute(item, {
       href: photo.links.html,
       target: "_blank",
@@ -48,9 +46,6 @@ function displayPhotos() {
     // create <img> for photo
     const img = document.createElement("img");
     // setting atribute using function
-    // img.setAttribute("src", photo.urls.regular);
-    // img.setAttribute("alt", photo.alt_description);
-    // img.setAttribute("title", photo.alt_description);
     setAttribute(img, {
       src: photo.urls.regular,
       alt: photo.alt_description,
