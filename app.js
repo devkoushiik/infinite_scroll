@@ -8,17 +8,19 @@ let photoArray = [];
 
 // unsplash api
 
-const count = 500;
+let count = 5;
 const apiKey = "v0-1LpKFyJqLVlcfz7JxcHGrKYFFEZ3nGM3Tae_C9Qk";
-const urlApi = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
+let urlApi = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
 
 // check if all imaged were laoded
 
 function imageLoaded() {
   imagesLoaded++;
   if (imagesLoaded === totalImages) {
-    loader.hidden = true;
     ready = true;
+    loader.hidden = true;
+    count = 30;
+    urlApi = `https://api.unsplash.com/photos/random/?client_id=${apiKey}&count=${count}`;
   }
 }
 
